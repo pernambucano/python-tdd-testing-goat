@@ -38,7 +38,7 @@ class NewVisitorTest(unittest.TestCase):
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
             any(row.text == '1: It\'s on' for row in rows),
-            'New To-Do item was not sucessfully added.'
+            "New To-Do item was not sucessfully added."
         )
 
         # User enters new text, "Oh Yeah"
