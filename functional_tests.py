@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+import time
 
 class NewVisitorTest(unittest.TestCase):
 
@@ -35,8 +36,9 @@ class NewVisitorTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        assertTrue(
-            any(row.text == '1: It\'s on' for row in rows)
+        self.assertTrue(
+            any(row.text == '1: It\'s on' for row in rows),
+            'New To-Do item was not sucessfully added.'
         )
 
         # User enters new text, "Oh Yeah"
