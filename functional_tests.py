@@ -34,14 +34,25 @@ class NewVisitorTest(unittest.TestCase):
         input_text.send_keys(Keys.ENTER)
         time.sleep(1)
 
+        # User enters new text, "Oh Yeah"
+        input_text = self.browser.find_element_by_id('id_new_item')
+        input_text.send_keys('Oh Yeah')
+        input_text.send_keys(Keys.ENTER)
+        time.sleep(1)
+
+
+        
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == '1: It\'s on' for row in rows),
-            "New To-Do item was not sucessfully added."
-        )
+        self.assertIn('1: It\'s on', [row.text for row in rows]) 
+        self.assertIn('2: Oh Yeah', [row.text for row in rows])
 
-        # User enters new text, "Oh Yeah"
+
+        
+
+
+        
+        
         self.fail('Finish the test!')
 
         # Page updated showing both texts
