@@ -1,4 +1,15 @@
 {
     "python.linting.enabled": false,
-    "python.pythonPath": "${workspaceFolder}/virtualenv/bin/python"
+    "python.pythonPath": "${workspaceFolder}/virtualenv/bin/python",
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./superlists",
+        "-p",
+        "*test*.py"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.promptToConfigure": false
 }
