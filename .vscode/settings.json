@@ -11,5 +11,7 @@
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.pyTestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
-    "python.unitTest.promptToConfigure": false
+    "python.unitTest.promptToConfigure": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false
 }
