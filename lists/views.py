@@ -7,9 +7,8 @@ def home_page(request):
     return render(request, 'home.html' )
 
 def view_list(request, list_id):
-    list_ = List.objects.get(id=list_id)
-    items = Item.objects.filter(list=list_)
-    return render(request, 'lists.html', {'items': items})
+    list_ = List.objects.get(id=list_id) 
+    return render(request, 'lists.html', {'list': list_})
  
 def new_list(request):
     list_ = List.objects.create() # We are creating a new list for EVERY NEW ITEM!!!
