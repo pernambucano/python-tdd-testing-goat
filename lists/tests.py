@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, LiveServerTestCase
 from django.urls import resolve
 from lists.views import home_page
 from django.http import HttpRequest, HttpResponse
@@ -103,4 +103,11 @@ class NewItemTest(TestCase):
         response = self.client.post(f'/lists/{correct_list.id}/add_item', data={'item_text': 'New Item'})
 
         self.assertRedirects(response, f'/lists/{correct_list.id}/')
+
+
+
+
+
+
+
 
